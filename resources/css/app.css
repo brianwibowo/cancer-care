@@ -1,0 +1,112 @@
+:root {
+    --sidebar-width: 250px;
+}
+
+body {
+    background-color: #f8f9fa;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* App Container Styles */
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.preview-image {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px dashed #dee2e6;
+    display: none;
+    margin-top: 1rem;
+}
+
+.result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.btn-analyze {
+    display: none;
+    background-color: #0d6efd;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.upload-area:hover {
+    border-color: #0d6efd;
+    background-color: #f0f7ff;
+}
+
+/* Result Styles */
+.result-image-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.result-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.pdf-download-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.result-wrapper {
+    position: relative;
+    padding-top: 3rem;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #result,
+    #result * {
+        visibility: visible;
+    }
+
+    #result {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .pdf-download-btn,
+    .result-actions button:first-child {
+        display: none;
+    }
+}
